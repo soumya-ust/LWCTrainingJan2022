@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Permanent Address">
+        <p>Enter permenant address as govt id proof</p>
+        <lightning-input label="Address line 1" name="txt1" onchange={peradd1}></lightning-input>
+        <lightning-input label="Address line 2" name="txt2" onchange={peradd2}></lightning-input>
+        <lightning-input label="Landmark" name="txt3" onchange={perland}></lightning-input>
+        <lightning-input label="Zipcode" name="txt4" onchange={perzip}></lightning-input>
+        </lightning-card>
+       
+            <lightning-card title="Current Address">
+                <lightning-input label="Same as permenant address" type="checkbox" onchange={handleaddr}></lightning-input>
+                <template if:true={checked}>
+                <lightning-input label="Address line 1" name="txt1" value={addr1}></lightning-input>
+                <lightning-input label="Address line 2" name="txt2" value={addr2}></lightning-input>
+                <lightning-input label="Landmark" name="txt3" value={land}></lightning-input>
+                <lightning-input label="Zipcode" name="txt4" value={zip}></lightning-input>
+            </template>
+                </lightning-card>
+       
+</template>
