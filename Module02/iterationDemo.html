@@ -1,42 +1,43 @@
 <template>
     <lightning-card title="For:Each Demo" icon-name="standard:contact">
 
-        <table class="slds-table slds-table_cell-buffer slds-table_bordered" id="Table1">
-            <thead>
-                <tr class="slds-line-height_reset">
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="Index">Index</div>
-                    </th>
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="ID">ID</div>
-                    </th>
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="Name">Name</div>
-                    </th>
-                    <th class="" scope="col">
-                        <div class="slds-truncate" title="Email">Email</div>
-                    </th>
-                </tr>
-            </thead>
+        <table class="slds-table slds-table_bordered">
 
+            <thead>
+
+                <tr class="slds-line-height_reset">
+
+                    <th scope="col"> Index </th>
+
+                    <th scope="col"> Employee ID </th>
+
+                    <th scope="col"> Name </th>
+
+                    <th scope="col"> Email </th>
+
+                </tr>
+
+            </thead>
             <tbody>
-                <template for:each={contact} for:item ="contact" for:index="index">
-                    <tr class="slds-hint-parent" key={contact.id}>
-                        <td data-label="Index">
-                            <div class="slds-truncate">{index}</div>
-                        </td>
-                        <td data-label="ID">
-                            <div class="slds-truncate">{contact.id}</div>
-                        </td>
-                        <td data-label="Name">
-                            <div class="slds-truncate">{contact.name}</div>
-                        </td>
-                        <td data-label="Email">
-                            <div class="slds-truncate">{contact.email}</div>
-                        </td>
-                    </tr>           
+
+                <template for:each={contact} for:item="cc" for:index="index" class="slds-box">
+        
+                    <tr class="slds-hint-parent" key={cc.Id}>
+        
+                        <th scope="row"> {index} </th>
+        
+                        <th scope="row"> {cc.id} </th>
+        
+                        <th scope="row"> {cc.name} </th>
+        
+                        <th scope="row"> {cc.email} </th>
+        
+                    </tr>
+        
                 </template>
+        
             </tbody>
+        
         </table>
     </lightning-card>
 
@@ -51,3 +52,4 @@
         <hr style="width:50% size=3 color=black"/>
     </lightning-card>
 </template>
+
