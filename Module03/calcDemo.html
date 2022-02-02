@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Full Calculator" icon-name="custom:custom34">
+        <lightning-input value={exp} name="expression" label="expression" readonly></lightning-input>
+        <lightning-input value={result} name="result" label="Result" readonly></lightning-input>
+        <div style="display: inline-block">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <tr class="slds-line-height_reset">
+        <td><lightning-button label="1" name="one" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="2" name="two" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="3" name="three" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="+" variant="brand" onclick={doOperation}></lightning-button></td>
+    </tr>
+    <tr class="slds-line-height_reset">
+        <td><lightning-button label="4" name="four" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="5" name="five" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="6" name="six" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="-" variant="brand" onclick={doOperation}></lightning-button></td>
+    </tr>
+    <tr class="slds-line-height_reset">
+        <td><lightning-button label="7" name="seven" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="8" name="eight" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="9" name="nine" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="*" variant="brand" onclick={doOperation}></lightning-button></td>
+    </tr>
+    <tr class="slds-line-height_reset">
+        <td><lightning-button label="CLR" variant="destructive-text" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="0" name="zero" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="=" variant="success" onclick={doOperation}></lightning-button></td>
+        <td><lightning-button label="/" variant="brand" onclick={doOperation}></lightning-button></td>
+    </tr>
+        </table>
+        </div>
+    </lightning-card>
+</template>
