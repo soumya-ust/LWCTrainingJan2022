@@ -1,0 +1,61 @@
+<template>
+    <template if:false={selected}>
+        <lightning-card icon-name="standard:account" title="Search Account">   
+    <lightning-input type="search" placeholder="Search account" onchange={handleaccounts}></lightning-input>
+    </lightning-card>
+
+    <template if:true={clicked}> 
+        
+            <table class="slds-table slds-table_bordered">
+                <thead></thead>
+                <tbody>
+     <template for:each={aclist.data} for:item="ac">      
+        <tr key={ac.Id} data-key={ac.Id} onclick={handleContacts}>
+                <td>{ac.Name}</td>
+            </tr> 
+        
+        </template>
+    </tbody>
+    </table>
+    </template>
+</template>
+        <template if:true={option}>
+            <lightning-card> 
+                <div class="slds-box">
+                    <lightning-card icon-name="standard:account" title="Selected Account"> 
+                <lightning-record-view-form record-id={contactsel} object-api-name="Account">
+                    
+                      <b> <lightning-output-field field-name="Name"></lightning-output-field></b> 
+                        <lightning-output-field field-name="Type"></lightning-output-field>
+                        <lightning-output-field field-name="Phone"></lightning-output-field>
+                        <lightning-output-field field-name="Amount"></lightning-output-field>
+                   
+                </lightning-record-view-form>
+                </lightning-card>
+            </div>
+            <div class="slds-box">
+                <div class="slds-align_absolute-center">
+                <lightning-button label="Reset Search" variant="brand" onclick={resetSearch}></lightning-button>
+            </div>
+        </div>
+            <lightning-card icon-name="standard:contact" title="Related Contacts"> 
+            <table>
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <template for:each={conlist.data} for:item="cc">
+                <tr key={cc.Id}>
+                    <td>{cc.Name}</td>
+                    <td>{cc.Title}</td>
+                    <td>{cc.Email}</td>
+                    <td>{cc.Phone}</td>
+                </tr>
+            </template>
+        </table>
+        </lightning-card>
+    </lightning-card>
+    </template>
+</template> 
