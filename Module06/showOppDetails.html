@@ -1,0 +1,33 @@
+<template>
+   <lightning-combobox
+   name="search"
+   label="Search Opportunity"
+   value={value}
+   placeholder="Search..."
+   options={eventOptions}
+   onchange={handleSearch} >
+</lightning-combobox>
+
+        <template if:true={selected}>
+    <table>
+        <tr>
+            <th>Account Name</th>
+            <th>Close Date</th>
+            <th>Amount</th>
+            <th>Stage</th>
+        </tr>
+        <template for:each={oplist.data} for:item="op">
+            <tr key={op.Id}>
+                <td>{op.Name}</td>
+                <td>{op.CloseDate}</td>
+                <td>{op.Amount}</td>
+                <td>{op.StageName}</td>
+            </tr>
+        </template>
+    </table>
+</template>
+    
+    <template if:true={operror}>
+        <p>{operror.body.message}</p>
+    </template>
+</template>
